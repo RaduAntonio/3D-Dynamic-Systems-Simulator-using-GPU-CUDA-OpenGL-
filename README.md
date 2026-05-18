@@ -1,4 +1,4 @@
-# 🧬 Dynamic Systems Simulator using GPU
+# Dynamic Systems Simulator using GPU
 
 A high-performance 3D cellular automaton simulator implementing **Conway's Game of Life** in three dimensions, with real-time OpenGL visualization and parallel execution on both CPU (OpenMP) and GPU (CUDA).
 
@@ -8,7 +8,7 @@ A high-performance 3D cellular automaton simulator implementing **Conway's Game 
 
 ---
 
-## 📸 Preview
+## Preview
 
 | 3D Simulation (low density) | 3D Simulation (high density) |
 |---|---|
@@ -18,7 +18,7 @@ The voxel color changes dynamically based on population density: **blue** (spars
 
 ---
 
-## ✨ Features
+## Features
 
 - **3D Game of Life** with Moore neighborhood (26 neighbors per cell), rules Birth 5–7 / Survive 4–6
 - **Three execution backends**:
@@ -34,7 +34,7 @@ The voxel color changes dynamically based on population density: **blue** (spars
 
 ---
 
-## 📊 Performance Results
+## Performance Results
 
 Tested on **Intel i5-10500H (12 threads)** + **NVIDIA RTX 3060 Laptop GPU** (Ampere, CC 8.6, 30 SMs):
 
@@ -50,7 +50,7 @@ Tested on **Intel i5-10500H (12 threads)** + **NVIDIA RTX 3060 Laptop GPU** (Amp
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 DynamicSystemsSimulator/
@@ -71,7 +71,7 @@ DynamicSystemsSimulator/
 
 ---
 
-## ⚙️ Build Requirements
+## Build Requirements
 
 | Dependency | Version |
 |------------|---------|
@@ -85,7 +85,7 @@ DynamicSystemsSimulator/
 
 ---
 
-## 🚀 Build & Run
+## Build & Run
 
 ```bash
 # Clone the repository
@@ -105,7 +105,7 @@ cmake --build build --config Release
 
 ---
 
-## 🎮 Controls
+## Controls
 
 | Input | Action |
 |-------|--------|
@@ -118,7 +118,7 @@ cmake --build build --config Release
 
 ---
 
-## 🔬 CUDA Implementation Details
+## CUDA Implementation Details
 
 - **Block size**: 256 threads — optimized for Ampere SM occupancy (8 × 32 warps)
 - **Grid size**: `(totalCells + 255) / 256` blocks
@@ -129,7 +129,7 @@ cmake --build build --config Release
 
 ---
 
-## 📈 Scalability Analysis
+## Scalability Analysis
 
 - **CPU Serial**: O(N) per generation, strictly linear with cell count
 - **CPU Parallel**: ~5–5.7x speedup on 12 threads; efficiency capped by memory bandwidth
@@ -138,7 +138,7 @@ cmake --build build --config Release
 
 ---
 
-## 🗺️ Roadmap / Future Work
+## Roadmap / Future Work
 
 - [ ] Shared memory tiling in CUDA kernel (estimated 2–5x additional speedup)
 - [ ] Multiple CUDA streams for overlap of compute and memory transfers
@@ -150,7 +150,7 @@ cmake --build build --config Release
 
 ---
 
-## 📚 References
+## References
 
 - Cheng, Grossman, McKercher — *Professional CUDA C Programming*, Wiley, 2014
 - Kirk & Hwu — *Programming Massively Parallel Processors*, 3rd ed., Morgan Kaufmann, 2016
@@ -160,6 +160,6 @@ cmake --build build --config Release
 
 ---
 
-## 📄 License
+## License
 
 This project was developed as a bachelor's thesis at UNSTPB. Source code is provided for academic reference.
